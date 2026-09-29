@@ -31,7 +31,6 @@ the files of the repository are divided in
 # Simulation
 ## Simulation tools
 ## Simulation results
-```markdown
 ## Copyright and Permissions
 
 Copyright (c) 2026 Oleg [Cognome]. All rights reserved.
