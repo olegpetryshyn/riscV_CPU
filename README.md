@@ -33,7 +33,7 @@ the files of the repository are divided in
 ## Simulation results
 ## License and Copyright
 
-This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **Apache License 2.0** - see the [License.txt](LICENSE) file for details.
 
 ```text
 Copyright (c) 2026 Oleg Petryshyn
