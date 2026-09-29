@@ -30,3 +30,15 @@ the files of the repository are divided in
 ```bash
 cd tb
 make SIM=verilator WAVES=1
+
+# Simulation
+## Simulation tools
+## Simulation results
+```markdown
+## Copyright and Permissions
+
+Copyright (c) 2026 Oleg [Cognome]. All rights reserved.
+
+This repository is maintained for portfolio and educational demonstration purposes. 
+Unauthorized copying, redistribution, or commercial use of this material without 
+prior written permission is strictly prohibited.
