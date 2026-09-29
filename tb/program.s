@@ -1,5 +1,5 @@
 #===========================================================================
-# File Name = program.asm 
+# File Name = program
 # Function  = an assembly (with riscv instructions) loaded in the memory
 # to test the single cycle cpu
 # the program includes: 
