@@ -36,5 +36,5 @@ the files of the repository are divided in
 This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
 
 ```text
-Copyright (c) 2026 Oleg [Cognome]
+Copyright (c) 2026 Oleg Petryshyn
 All rights reserved.
