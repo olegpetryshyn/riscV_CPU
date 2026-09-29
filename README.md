@@ -29,7 +29,7 @@ the files of the repository are divided in
 
 ```bash
 cd tb
-make SIM=verilator WAVES=1
+make SIM=verilator WAVES=1'''
 
 # Simulation
 ## Simulation tools
