@@ -27,9 +27,6 @@ The next image shows the complete datapath of the single cycle cpu. the CPU uses
 # File tree
 the files of the repository are divided in
 
-```bash
-cd tb
-make SIM=verilator WAVES=1'''
 
 # Simulation
 ## Simulation tools
