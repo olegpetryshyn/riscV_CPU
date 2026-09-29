@@ -31,10 +31,10 @@ the files of the repository are divided in
 # Simulation
 ## Simulation tools
 ## Simulation results
-## Copyright and Permissions
+## License and Copyright
 
-Copyright (c) 2026 Oleg [Cognome]. All rights reserved.
+This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
 
-This repository is maintained for portfolio and educational demonstration purposes. 
-Unauthorized copying, redistribution, or commercial use of this material without 
-prior written permission is strictly prohibited.
+```text
+Copyright (c) 2026 Oleg [Cognome]
+All rights reserved.
