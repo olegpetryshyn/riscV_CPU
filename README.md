@@ -31,6 +31,12 @@ the files of the repository are divided in
 # Simulation
 ## Simulation tools
 ## Simulation results
+
+
+
+# Advanced Exploration
+
+For an extended version exploring emerging memory technologies (STT-MRAM) and 7nm synthesis (DTCO/STCO), see the companion repository: rv32i-stco-framework.
 ## License and Copyright
 
 This project is licensed under the **Apache License 2.0** - see the [LICENSE](License) file for details.
