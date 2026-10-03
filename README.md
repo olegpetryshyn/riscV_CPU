@@ -49,7 +49,7 @@ The file contained in the tesbench are
 
 Simulation waveform generated via Verilator and Cocotb, demonstrating verified execution of the RV32I instruction set:
 
-![Baseline Single-Cycle Waveform](docs/GTKWAVE.png)
+![Baseline Single-Cycle Waveform](docs/GTKWAVE_traces.jpg)
 
 * **Clock Frequency:** 50 MHz (20 ns cycle time).
 * **Memory Transactions Highlighted:**
