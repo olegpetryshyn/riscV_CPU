@@ -1,0 +1,113 @@
+oleg@DESKTOP-084E7VE:~$ source .venv/dv/bin/activate
+(dv) oleg@DESKTOP-084E7VE:~$ cd projects
+(dv) oleg@DESKTOP-084E7VE:~/projects$ cd riscv_cpu
+(dv) oleg@DESKTOP-084E7VE:~/projects/riscv_cpu$ cd tb
+(dv) oleg@DESKTOP-084E7VE:~/projects/riscv_cpu/tb$ make clean
+(dv) oleg@DESKTOP-084E7VE:~/projects/riscv_cpu/tb$ make SIM=verilator
+rm -f results.xml
+"make" -f makefile results.xml
+make[1]: Entering directory '/home/oleg/projects/riscv_cpu/tb'
+mkdir -p sim_build
+/usr/local/bin/verilator -cc --exe -Mdir sim_build --top-module rv32I_top --timescale 1ns/1ps --vpi --public-flat-rw --prefix Vtop -o Vtop -LDFLAGS "-Wl,-rpath,/home/oleg/.venv/dv/lib/python3.12/site-packages/cocotb/libs -L/home/oleg/.venv/dv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator" --trace --trace-structs --public-flat-rw -Wno-fatal /home/oleg/projects/riscv_cpu/tb/../rtl/package/isa_pkg.sv /home/oleg/projects/riscv_cpu/tb/../rtl/core/ALU_32bit.sv /home/oleg/projects/riscv_cpu/tb/../rtl/core/control_unit.sv /home/oleg/projects/riscv_cpu/tb/../rtl/core/imm_gen.sv /home/oleg/projects/riscv_cpu/tb/../rtl/core/program_counter.sv /home/oleg/projects/riscv_cpu/tb/../rtl/core/register_file.sv /home/oleg/projects/riscv_cpu/tb/../rtl/core/rv32I_core.sv /home/oleg/projects/riscv_cpu/tb/../rtl/top_level/data_memory.sv /home/oleg/projects/riscv_cpu/tb/../rtl/top_level/instruction_memory.sv /home/oleg/projects/riscv_cpu/tb/../rtl/top_level/rv32I_top.sv /home/oleg/.venv/dv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+- V e r i l a t i o n   R e p o r t: Verilator 5.036 2025-04-27 rev v5.036
+- Verilator: Built from 0.212 MB sources in 11 modules, into 0.195 MB in 13 C++ files needing 0.000 MB
+- Verilator: Walltime 0.020 s (elab=0.001, cvt=0.009, bld=0.000); cpu 0.016 s on 1 threads; alloced 21.156 MB
+make -C sim_build  -f Vtop.mk
+make[2]: Entering directory '/home/oleg/projects/riscv_cpu/tb/sim_build'
+ccache g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/oleg/.venv/dv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /usr/local/share/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /usr/local/share/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vcd_c.o /usr/local/share/verilator/include/verilated_vcd_c.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__DepSet_h84412442__0.cpp Vtop___024root__DepSet_heccd7ead__0.cpp Vtop__Dpi.cpp Vtop__Trace__0.cpp Vtop___024root__Slow.cpp Vtop___024root__DepSet_h84412442__0__Slow.cpp Vtop___024root__DepSet_heccd7ead__0__Slow.cpp Vtop_isa_pkg__Slow.cpp Vtop_isa_pkg__DepSet_hd796f890__0__Slow.cpp Vtop__Syms.cpp Vtop__Trace__0__Slow.cpp Vtop__TraceDecls__0__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+echo "" > Vtop__ALL.verilator_deplist.tmp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_vcd_c.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/oleg/.venv/dv/lib/python3.12/site-packages/cocotb/libs -L/home/oleg/.venv/dv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o Vtop
+rm Vtop__ALL.verilator_deplist.tmp
+make[2]: Leaving directory '/home/oleg/projects/riscv_cpu/tb/sim_build'
+rm -f results.xml
+COCOTB_TEST_MODULES=test_top COCOTB_TESTCASE= COCOTB_TEST_FILTER= COCOTB_TOPLEVEL=rv32I_top TOPLEVEL_LANG=verilog \
+         sim_build/Vtop  --trace --trace-structs --public-flat-rw -Wno-fatal
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/oleg/.venv/dv/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.036 2025-04-27
+     0.00ns INFO     cocotb                             Seeding Python random module with 1791032584
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/oleg/.venv/dv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_top.test_addition (1/1)
+                                                            Test execution insttuction:
+    60.00ns INFO     cocotb.rv32I_top                   Reset complete, CPU in execution...
+    80.00ns INFO     cocotb.rv32I_top                   Ciclo 0: PC = 0x00000004
+   100.00ns INFO     cocotb.rv32I_top                   Ciclo 1: PC = 0x00000008
+   120.00ns INFO     cocotb.rv32I_top                   Ciclo 2: PC = 0x0000000c
+   140.00ns INFO     cocotb.rv32I_top                   Ciclo 3: PC = 0x00000010
+   160.00ns INFO     cocotb.rv32I_top                   Ciclo 4: PC = 0x00000014
+   180.00ns INFO     cocotb.rv32I_top                   Ciclo 5: PC = 0x00000018
+   200.00ns INFO     cocotb.rv32I_top                   Ciclo 6: PC = 0x0000001c
+   220.00ns INFO     cocotb.rv32I_top                   Ciclo 7: PC = 0x00000020
+   240.00ns INFO     cocotb.rv32I_top                   Ciclo 8: PC = 0x00000024
+   260.00ns INFO     cocotb.rv32I_top                   Ciclo 9: PC = 0x00000028
+   280.00ns INFO     cocotb.rv32I_top                   Ciclo 10: PC = 0x0000002c
+   300.00ns INFO     cocotb.rv32I_top                   Ciclo 11: PC = 0x00000030
+   320.00ns INFO     cocotb.rv32I_top                   Ciclo 12: PC = 0x00000038
+   340.00ns INFO     cocotb.rv32I_top                   Ciclo 13: PC = 0x0000003c
+   360.00ns INFO     cocotb.rv32I_top                   Ciclo 14: PC = 0x00000040
+   380.00ns INFO     cocotb.rv32I_top                   Ciclo 15: PC = 0x00000044
+   400.00ns INFO     cocotb.rv32I_top                   Ciclo 16: PC = 0x00000048
+   420.00ns INFO     cocotb.rv32I_top                   Ciclo 17: PC = 0x0000004c
+   440.00ns INFO     cocotb.rv32I_top                   Ciclo 18: PC = 0x00000038
+   460.00ns INFO     cocotb.rv32I_top                   Ciclo 19: PC = 0x0000003c
+   480.00ns INFO     cocotb.rv32I_top                   Ciclo 20: PC = 0x00000040
+   500.00ns INFO     cocotb.rv32I_top                   Ciclo 21: PC = 0x00000044
+   520.00ns INFO     cocotb.rv32I_top                   Ciclo 22: PC = 0x00000048
+   540.00ns INFO     cocotb.rv32I_top                   Ciclo 23: PC = 0x0000004c
+   560.00ns INFO     cocotb.rv32I_top                   Ciclo 24: PC = 0x00000038
+   580.00ns INFO     cocotb.rv32I_top                   Ciclo 25: PC = 0x0000003c
+   600.00ns INFO     cocotb.rv32I_top                   Ciclo 26: PC = 0x00000040
+   620.00ns INFO     cocotb.rv32I_top                   Ciclo 27: PC = 0x00000044
+   640.00ns INFO     cocotb.rv32I_top                   Ciclo 28: PC = 0x00000048
+   660.00ns INFO     cocotb.rv32I_top                   Ciclo 29: PC = 0x0000004c
+   680.00ns INFO     cocotb.rv32I_top                   Ciclo 30: PC = 0x00000038
+   700.00ns INFO     cocotb.rv32I_top                   Ciclo 31: PC = 0x0000003c
+   720.00ns INFO     cocotb.rv32I_top                   Ciclo 32: PC = 0x00000040
+   740.00ns INFO     cocotb.rv32I_top                   Ciclo 33: PC = 0x00000044
+   760.00ns INFO     cocotb.rv32I_top                   Ciclo 34: PC = 0x00000048
+   780.00ns INFO     cocotb.rv32I_top                   Ciclo 35: PC = 0x0000004c
+   800.00ns INFO     cocotb.rv32I_top                   Ciclo 36: PC = 0x00000038
+   820.00ns INFO     cocotb.rv32I_top                   Ciclo 37: PC = 0x0000003c
+   840.00ns INFO     cocotb.rv32I_top                   Ciclo 38: PC = 0x00000040
+   860.00ns INFO     cocotb.rv32I_top                   Ciclo 39: PC = 0x00000044
+   880.00ns INFO     cocotb.rv32I_top                   Ciclo 40: PC = 0x00000048
+   900.00ns INFO     cocotb.rv32I_top                   Ciclo 41: PC = 0x00000050
+   920.00ns INFO     cocotb.rv32I_top                   Ciclo 42: PC = 0x00000054
+   940.00ns INFO     cocotb.rv32I_top                   Ciclo 43: PC = 0x00000054
+   960.00ns INFO     cocotb.rv32I_top                   Ciclo 44: PC = 0x00000054
+   980.00ns INFO     cocotb.rv32I_top                   Ciclo 45: PC = 0x00000054
+  1000.00ns INFO     cocotb.rv32I_top                   Ciclo 46: PC = 0x00000054
+  1020.00ns INFO     cocotb.rv32I_top                   Ciclo 47: PC = 0x00000054
+  1040.00ns INFO     cocotb.rv32I_top                   Ciclo 48: PC = 0x00000054
+  1060.00ns INFO     cocotb.rv32I_top                   Ciclo 49: PC = 0x00000054
+  1060.00ns INFO     cocotb.rv32I_top                   Register x1 = 0 (Attended: 0)
+  1060.00ns INFO     cocotb.rv32I_top                   Register x2 = 169004903 (Attended: 0xA12CF67(169004903))
+  1060.00ns INFO     cocotb.rv32I_top                   Register x3 = 5 (Attended: 5)
+  1060.00ns INFO     cocotb.rv32I_top                   Register x4 = 1 (Attended: 1)
+  1060.00ns INFO     cocotb.rv32I_top                   Register x5 = 0 (Attended: 0)
+  1060.00ns INFO     cocotb.rv32I_top                   Register x6 = 8 (Attended: 8)
+  1060.00ns INFO     cocotb.rv32I_top                   Register x7 = 13 (Attended: 13)
+  1060.00ns INFO     cocotb.rv32I_top                   Register x8 = 13 (Attended: 13)
+  1060.00ns INFO     cocotb.rv32I_top                   Register x9 = 4096 (Attended: 0x00001000)
+  1060.00ns INFO     cocotb.rv32I_top                   Register x10 = 37 (Attended: 37)
+  1060.00ns INFO     cocotb.rv32I_top                   Test successfully passed: CPU single core is operative!
+  1060.00ns INFO     cocotb.regression                  test_top.test_addition passed
+  1060.00ns INFO     cocotb.regression                  **************************************************************************************
+                                                        ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **************************************************************************************
+                                                        ** test_top.test_addition         PASS        1060.00           0.01     196663.08  **
+                                                        **************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0               1060.00           0.01     154271.91  **
+                                                        **************************************************************************************
+
+- :0: Verilog $finish
+make[1]: Leaving directory '/home/oleg/projects/riscv_cpu/tb'
+(dv) oleg@DESKTOP-084E7VE:~/projects/riscv_cpu/tb$
