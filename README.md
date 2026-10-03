@@ -62,7 +62,7 @@ Simulation waveform generated via Verilator and Cocotb, demonstrating verified e
 
 
 
-# Advanced Applicarions
+# Advanced Applications
 For an extended version exploring emerging memory technologies (STT-MRAM) and 7nm synthesis (DTCO/STCO), see the companion repository: rv32i-stco-framework.
 
 
