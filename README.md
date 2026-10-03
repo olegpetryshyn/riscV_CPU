@@ -45,6 +45,7 @@ The file contained in the tesbench are
 ## Simulation Program 
 
 ## Simulation results
+<img width="2108" height="236" alt="image" src="https://github.com/user-attachments/assets/d4d95e70-9aaf-4033-9d41-8ab8e79aee8f" />
 
 
 
