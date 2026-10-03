@@ -45,7 +45,17 @@ The file contained in the tesbench are
 ## Simulation Program 
 
 ## Simulation results
-<img width="2108" height="236" alt="image" src="https://github.com/user-attachments/assets/d4d95e70-9aaf-4033-9d41-8ab8e79aee8f" />
+### Baseline Single-Cycle Execution Trace
+
+Simulation waveform generated via Verilator and Cocotb, demonstrating verified execution of the RV32I instruction set:
+
+![Baseline Single-Cycle Waveform](docs/waves_single_cycle.png)
+
+* **Clock Frequency:** 50 MHz (20 ns cycle time).
+* **Memory Transactions Highlighted:**
+  * **200 ns – 220 ns (`SW`):** Data memory write assertion (`dmem_we = 1`) targeting address `0x00001008` with payload `0x00000005`.
+  * **220 ns – 240 ns (`LW`):** Single-cycle memory load (`mem_to_reg = 1`) retrieving `0x00000005` onto `dmem_rdata` with register write-back assertion (`reg_write = 1`).
+* **Datapath Latency:** Zero-wait-state memory access completing in a single clock cycle.
 
 
 
