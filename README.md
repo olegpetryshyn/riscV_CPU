@@ -53,8 +53,8 @@ Simulation waveform generated via Verilator and Cocotb, demonstrating verified e
 
 * **Clock Frequency:** 50 MHz (20 ns cycle time).
 * **Memory Transactions Highlighted:**
-  * **200 ns – 220 ns (`SW`):** Data memory write assertion (`dmem_we = 1`) targeting address `0x00001008` with payload `0x00000005`.
-  * **220 ns – 240 ns (`LW`):** Single-cycle memory load (`mem_to_reg = 1`) retrieving `0x00000005` onto `dmem_rdata` with register write-back assertion (`reg_write = 1`).
+  * **200 ns – 220 ns (SW):** Data memory write assertion (`dmem_we = 1`) targeting address `0x00001008` with payload `0x00000005`.
+  * **220 ns – 240 ns (LW):** Single-cycle memory load (`mem_to_reg = 1`) retrieving `0x00000005` onto `dmem_rdata` with register write-back assertion (`reg_write = 1`).
 * **Datapath Latency:** Zero-wait-state memory access completing in a single clock cycle.
 
 
