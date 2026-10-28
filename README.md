@@ -18,11 +18,7 @@ The immediate field is sign-extended in RISC-V
 
 
 # Microarchitecture
-The next image shows the complete datapath of the single cycle cpu. the CPU uses a Harvard architecture (instead of a Von Neumann one). The choice is necessary for a single cycle implementation, since it is imperative to execute an instruction with the data in a single clok cycle (not possible if the data and instruction memory arent separate).
-
-The Hardware Descripting Langage Used is SystemVerilog. 
-
-
+The following image shows the complete datapath of the single cycle cpu. the CPU uses a Harvard architecture (instead of a Von Neumann one). The choice is necessary for a single cycle implementation, since it is imperative to execute an instruction with the data in a single clok cycle (not possible if the data and instruction memory arent separate).
 
 
 <p align="center">
@@ -31,10 +27,30 @@ The Hardware Descripting Langage Used is SystemVerilog.
 
 # Inplemented Instruction
 # File tree
-the files of the repository are mainly divided in:
-  - RTL
+the files of the repository are divided in:
+  - RTL: contains the SystemVer
   - testbench (tb)
+  - Simulation
+
 ## RTL
+the Hardware Descriptive language used is **SystemVerilog**, chosen for it's ease of use and industry recognition. The code structure is described from the  `Top_level`, which inplements the `RTL_core`
+and the *memory registers* (divided in `instruction_memory` and `data_memory`). the kernel of the project Is represented by the core, which has instances of all the logic described in the datapath and control unit. The components of the core are the:
+- `ALU` : The arithmetic logic unit, which implemnts the following operations:
+  - `ALU_ADD`: sum
+  - `ALU_SUB`: subtraction
+  - `ALU_AND`: and bitwise
+  - `ALU_OR`:  or bitwise
+  - `ALU_XOR`: xor bitwise
+  - `ALU_SLT`: comparison with sign ( `out = 0x11111111` if a<b, else  `out = 0x00000000`)
+  - `ALU_LUI`: takes only the second operand. It will be used for the Load upper Immediate operation.
+ 
+  
+- `Control Unit`: Recieves the instruction from the `instruction_memory` and outputs the necessary control signals
+- `immediate_generator`: takes the instruction and generates extracts the immediate. Depending on the instruction, the immediate bits change position. 
+- `immediate_generator`:
+
+### Instruction Supported
+
 ## Testbench
 the cpu test is executed using cocotb (python) to verify the results obtained 
 The file contained in the tesbench are 
@@ -52,18 +68,10 @@ Simulation waveform generated via Verilator and Cocotb, demonstrating verified e
 ![Baseline Single-Cycle Waveform](docs/GTKWAVE_traces.jpg)
 
 * **Clock Frequency:** 50 MHz (20 ns cycle time).
-* **Memory Transactions Highlighted:**
-  * **200 ns – 220 ns (SW):** Data memory write assertion (`dmem_we = 1`) targeting address `0x00001008` with payload `0x00000005`.
-  * **220 ns – 240 ns (LW):** Single-cycle memory load (`mem_to_reg = 1`) retrieving `0x00000005` onto `dmem_rdata` with register write-back assertion (`reg_write = 1`).
-* **Datapath Latency:** Zero-wait-state memory access completing in a single clock cycle.
-
-
-
-
-
-
-# Advanced Applications
-For an extended version exploring emerging memory technologies (STT-MRAM) and 7nm synthesis (DTCO/STCO), see the companion repository: rv32i-stco-framework.
+* *Memory Transactions Highlighted:*
+  * 200 ns – 220 ns (SW): Data memory write assertion (dmem_we = 1) targeting address `0x00001008` with payload `0x00000005`.
+  * 220 ns – 240 ns (LW): Single-cycle memory load (mem_to_reg = 1) retrieving `0x00000005` onto dmem_rdata with register write-back assertion (reg_write = 1).
+  * 
 
 
 # License and Copyright
