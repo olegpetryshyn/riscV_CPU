@@ -18,7 +18,6 @@ The following image shows the complete datapath of the single cycle cpu. the CPU
   <img src="docs/Datapath Single cycle.svg" alt="RISC-V RV32I Single-Cycle Datapath" width="850"/>
 </p>
 
-# Inplemented Instruction
 # File tree
 the files of the repository are divided in:
   - RTL: contains the SystemVer
