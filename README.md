@@ -154,5 +154,6 @@ Simulation waveform generated with Verilator and cocotb, showing the execution o
 ## License and Copyright
 
 This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
-
+```
 Copyright (c) 2026 Oleg Petryshyn
+```
